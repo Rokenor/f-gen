@@ -1,0 +1,78 @@
+[
+  {
+    "id": 0,
+    "name": "Default",
+    "slug": "default",
+    "meta": {
+      "title": "Default | Final Page",
+      "description": "Final Page Default Description"
+    },
+    "components": [
+      {
+        "id": "header_0",
+        "name": "HeaderComponent",
+        "properties": {
+          "type": "default"
+        }
+      },
+      {
+        "id": "list_0",
+        "name": "ListComponent",
+        "properties": {}
+      },
+      {
+        "id": "info_0",
+        "name": "InfoComponent",
+        "properties": {}
+      },
+      {
+        "id": "slider_0",
+        "name": "SliderComponent",
+        "properties": {}
+      },
+      {
+        "id": "price_0",
+        "name": "PriceComponent",
+        "properties": {}
+      },
+      {
+        "id": "footer_0",
+        "name": "FooterComponent",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Neutral",
+    "slug": "ntrl",
+    "meta": {
+      "title": "Neutral | Final Page",
+      "description": "Final Page Neutral Description"
+    },
+    "components": [
+      {
+        "id": "header_0",
+        "name": "HeaderComponent",
+        "properties": {
+          "type": "ntrl"
+        }
+      },
+      {
+        "id": "list_0",
+        "name": "ListComponent",
+        "properties": {}
+      },
+      {
+        "id": "price_0",
+        "name": "PriceComponent",
+        "properties": {}
+      },
+      {
+        "id": "footer_0",
+        "name": "FooterComponent",
+        "properties": {}
+      }
+    ]
+  }
+]
