@@ -1,35 +1,30 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 
-import finalConfigs from '../../../../mock/finalConfigs.json';
 import finalDataMock from '../../../../mock/finalData.json';
 
 import { finalComponents } from '../../../../components/componentsList';
 
 import { FinalDataType, FinalType } from '../../../../types/final';
+import { GetServerSidePropsContext } from 'next';
+
+import { getConfigs } from '../../../../api/finalConfigs';
 
 const FinalContainer = dynamic(
   () => import('../../../../components/FinalContainer')
 );
 
-function FinalPage(): JSX.Element {
-  const router = useRouter();
-
-  const { finalId, userId } = router.query;
-
-  const [currentConfig, setCurrentConfig] = useState<FinalType | undefined>();
-  const currentData: FinalDataType = finalDataMock;
-
-  useEffect(() => {
-    finalConfigs.forEach((config) => {
-      if (config.slug === finalId) {
-        setCurrentConfig(config);
-      }
-    });
-  }, [finalId]);
-
+function FinalPage({
+  currentConfig,
+  finalData,
+  finalId,
+  userId,
+}: {
+  currentConfig: FinalType;
+  finalData: FinalDataType;
+  finalId: string;
+  userId: string;
+}): JSX.Element {
   return (
     <>
       {currentConfig && (
@@ -46,7 +41,7 @@ function FinalPage(): JSX.Element {
             finalId: {finalId}, userId: {userId}
           </div>
 
-          <FinalContainer finalData={currentData}>
+          <FinalContainer finalData={finalData}>
             {currentConfig.components.map((component) => {
               const CurrentComponent = finalComponents[component.name];
               return (
@@ -64,3 +59,24 @@ function FinalPage(): JSX.Element {
 }
 
 export default FinalPage;
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  const { finalId, userId } = ctx.query;
+
+  const finalConfigs: FinalType[] = await getConfigs();
+
+  const currentConfig = finalConfigs.filter(
+    (config) => config.slug === finalId
+  );
+
+  const finalData: FinalDataType = finalDataMock;
+
+  return {
+    props: {
+      currentConfig: currentConfig[0],
+      finalData,
+      finalId,
+      userId,
+    },
+  };
+}

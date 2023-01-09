@@ -2,8 +2,11 @@
 
 # dependencies
 f-gen-client/node_modules
+f-gen-server/node_modules
 /.pnp
 .pnp.js
+
+f-gen-client/.vscode
 
 # testing
 /coverage

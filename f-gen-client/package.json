@@ -1,5 +1,5 @@
 {
-  "name": "f-gen",
+  "name": "f-gen-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {

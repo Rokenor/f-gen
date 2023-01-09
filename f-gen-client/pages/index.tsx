@@ -9,7 +9,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <>Home</>
+      <>
+        <a href="/final/default/123-123-123">Final default test page</a>
+        <br></br>
+        <a href="/final/ntrl/123-123-123">Final ntrl test page</a>
+      </>
     </>
   );
 }
