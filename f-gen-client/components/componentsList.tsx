@@ -16,3 +16,30 @@ export const finalComponents: { [key: string]: ComponentType<unknown> } = {
   PriceComponent: Price,
   FooterComponent: Footer,
 };
+
+export const componentsList: { id: string; name: string }[] = [
+  {
+    id: 'header_0',
+    name: 'HeaderComponent',
+  },
+  {
+    id: 'list_0',
+    name: 'ListComponent',
+  },
+  {
+    id: 'info_0',
+    name: 'InfoComponent',
+  },
+  {
+    id: 'slider_0',
+    name: 'SliderComponent',
+  },
+  {
+    id: 'price_0',
+    name: 'PriceComponent',
+  },
+  {
+    id: 'footer_0',
+    name: 'FooterComponent',
+  },
+];

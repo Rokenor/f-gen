@@ -4,6 +4,7 @@ export type FinalComponentPropertiesType = {
 
 export type FinalComponentType = {
   id: string;
+  c_id: string;
   name: string;
   properties: FinalComponentPropertiesType;
 };
@@ -14,7 +15,7 @@ export type FinalMetaType = {
 };
 
 export type FinalType = {
-  id: number;
+  id: string;
   name: string;
   slug: string;
   meta: FinalMetaType;
